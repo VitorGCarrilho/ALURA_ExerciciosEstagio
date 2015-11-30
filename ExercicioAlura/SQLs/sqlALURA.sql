@@ -1,12 +1,11 @@
 SELECT 
 		count(distinct usu.id) as "Numero de usuarios"
 FROM
-		  Usuario usu
-		, Compra com 
+		  Usuario 	usu
+		, Compra 	com 
 WHERE  
-				usu.ID = com.USUARIO_ID
-	AND  	com.momentoDaCompra >= SYSDATE - 30
-	AND 	com.momentoDaCompra <= SYSDATE - 29 
+			usu.ID 				= 			com.USUARIO_ID
+	AND 	com.momentoDaCompra BETWEEN 	SYSDATE - 30 AND SYSDATE - 29
 ;
 
 /** INSERTS CRIADOS PARA TESTES
